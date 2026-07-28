@@ -1,12 +1,5 @@
-- Struct
 - Attack function
 - Repr function (classes 1-5)
 - struct init
 - void levelup
 
-- main which:
-	- creates two players
-	- calls repr per player
-	- one player attacks another
-	- the attacking player levels up
-	- prints repr showing function pointer has moved from level 1 attack to next level
