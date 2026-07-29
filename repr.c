@@ -1,37 +1,48 @@
 #include "main.h"
 
-void repr_1(struct player_s *p)
+char *print_class(unsigned int class)
 {
-	printf("player name: %s", p->name);
-	printf("player class: %s", p->class->name);
-	printf("player level: %d", p->level);
-	printf("player hp: %d", p->hp);
+	switch (class) {
+	case WARRIOR:
+		return ("WARRIOR");
+		break;
+	case ROGUE:
+		return ("ROGUE");
+		break;
+	case WIZARD:
+		return ("WIZARD");
+		break;
+	default:
+		return ("FUCKOFF");
+	}
 }
-void repr_2(struct player_s *p)
+
+void repr_warrior(player_t *p)
 {
-	printf("player name: %s", p->name);
-	printf("player class: %s", p->class->name);
-	printf("player level: %d", p->level);
-	printf("player hp: %d", p->hp);
+	printf("󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥\n");
+	printf("player name: %s\n", p->name);
+	printf("player class: %s\n", print_class(p->class));
+	printf("player level: %d\n", p->level);
+	printf("player hp: %d\n", p->hp);
+	printf("󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥󰓥\n");
 }
-void repr_3(struct player_s *p)
+
+void repr_rogue(player_t *p)
 {
-	printf("player name: %s", p->name);
-	printf("player class: %s", p->class->name);
-	printf("player level: %d", p->level);
-	printf("player hp: %d", p->hp);
+	printf("󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼\n");
+	printf("player name: %s\n", p->name);
+	printf("player class: %s\n", print_class(p->class));
+	printf("player level: %d\n", p->level);
+	printf("player hp: %d\n", p->hp);
+	printf("󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼󰧼\n");
 }
-void repr_4(struct player_s *p)
+
+void repr_wizard(player_t *p)
 {
-	printf("player name: %s", p->name);
-	printf("player class: %s", p->class->name);
-	printf("player level: %d", p->level);
-	printf("player hp: %d", p->hp);
-}
-void repr_5(struct player_s *p)
-{
-	printf("player name: %s", p->name);
-	printf("player class: %s", p->class->name);
-	printf("player level: %d", p->level);
-	printf("player hp: %d", p->hp);
+	printf("\n");
+	printf("player name: %s\n", p->name);
+	printf("player class: %s\n", print_class(p->class));
+	printf("player level: %d\n", p->level);
+	printf("player hp: %d\n", p->hp);
+	printf("\n");
 }

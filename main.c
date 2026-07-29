@@ -1,16 +1,18 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-int main(void) {
-    player_t p1;
-    player_t p2;
+int main(void)
+{
+	player_t p1;
+	player_t p2;
 
-    init.player(&p1, "Joe", 1, 100);
-    init.player(&p2, "Adam", 1, 100);
+	player_init(&p1, "Joe", 1, 100, 10, WARRIOR);
+	player_init(&p2, "Adam", 1, 100, 10, WIZARD);
 
-    p1.attack(&p1, &p2);
-    levelup(&p1);
-    p1.attack(&p1, &p2);
+	p1.attack(&p1, &p2);
+	level_up(&p1);
+	p1.attack(&p1, &p2);
+	level_up(&p1);
+	p1.attack(&p1, &p2);
+	level_up(&p1);
+	p1.attack(&p1, &p2);
 }
