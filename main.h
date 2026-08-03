@@ -19,13 +19,20 @@ typedef struct player_s {
 	unsigned int level;
 	unsigned int hp;
 	unsigned int damage;
-	unsigned int class;
+	int class;
 	void (*repr)(struct player_s *p);
 	void (*attack)(struct player_s *p1, struct player_s *p2);
 } player_t;
 
+typedef struct player_profile_s{
+	int class;
+	unsigned int hp;
+	unsigned int damage;
+	void (*repr)(player_t *p);
+} player_profile_t;
+
 void level_up(player_t *player);
-void player_init(player_t *p, char *name, unsigned int level, unsigned int hp, unsigned int damage, unsigned int class);
+void player_init(player_t *p, char *name, int class);
 void repr_warrior(player_t *p);
 void repr_rogue(player_t *p);
 void repr_wizard(player_t *p);

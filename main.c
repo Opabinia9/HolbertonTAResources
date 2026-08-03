@@ -4,9 +4,11 @@ int main(void)
 {
 	player_t p1;
 	player_t p2;
+	player_t p3;
 
-	player_init(&p1, "Joe", 1, 100, 10, WARRIOR);
-	player_init(&p2, "Adam", 1, 100, 10, WIZARD);
+	player_init(&p1, "Joe", WARRIOR);
+	player_init(&p2, "Adam", ROGUE);
+	player_init(&p3, "Jon", WIZARD);
 
 	p1.attack(&p1, &p2);
 	level_up(&p1);

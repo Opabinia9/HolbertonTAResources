@@ -1,6 +1,6 @@
 #include "main.h"
 
-char *print_class(unsigned int class)
+char *print_class(int class)
 {
 	switch (class) {
 	case WARRIOR:

@@ -1,27 +1,32 @@
 #include "main.h"
 #include <stdio.h>
 
-void player_init(player_t *p, char *name, unsigned int level, unsigned int hp, unsigned int damage, unsigned int class)
+void player_init(player_t *p, char *name, int class)
 {
+	player_profile_t profiles[] = {
+		{WARRIOR, 200, 100, repr_warrior},
+		{WIZARD, 50, 150, repr_wizard},
+		{ROGUE, 100, 100, repr_rogue},
+		{-1, 0, 0, NULL}
+	};
+	int i;
+
 	p->name = name;
 	p->class = class;
-	p->level = level;
-	p->hp = hp;
-	p->damage = damage;
-	switch (p->class) {
-	case WARRIOR:
-		p->repr = repr_warrior;
-		break;
-	case ROGUE:
-		p->repr = repr_rogue;
-		break;
-	case WIZARD:
-		p->repr = repr_wizard;
-		break;
-	default:
-		exit(-1);
-	}
+	p->level = 1;
 	p->attack = attack_1;
+
+	i = 0;
+	while (profiles[i].class != -1){
+		if (profiles[i].class == class){
+			p->hp = profiles[i].hp;
+			p->damage = profiles[i].damage;
+			p->repr = profiles[i].repr;
+			break;
+		}
+		i++;
+	}
+
 	printf("PLAYER %s CREATED\n", p->name);
 	printf("=======================================\n");
 	p->repr(p);
